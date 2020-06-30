@@ -226,6 +226,10 @@ window.addEventListener('click', e => {
         if (i >= 0 && i < n) {
             if (board[i][j] == '') {
                 board[i][j] = human;
+                let result = checkWinner();
+                if (result !== null) {
+                    return scores[result];
+                }
                 currentPlayer = ai;
                 bestMove();
             }
