@@ -17,6 +17,43 @@ var database = firebase.database();
 console.log(database)
 var ref = database.ref('score')
 
+var end = Date.now() + (5 * 1000);
+
+// go Buckeyes!
+var colors = ["#FFDF00", '#bb0000', '#ffffff'];
+
+function frame() {
+
+    confetti({
+        particleCount: 2,
+        angle: 120,
+        spread: 55,
+        origin: {
+            x: 1
+        },
+        colors: colors
+    });
+    console.log('fdjhji');
+    if (Date.now() < end) {
+        requestAnimationFrame(frame);
+    }
+};
+
+function frames2() {
+
+    confetti({
+        particleCount: 2,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+        colors: colors
+    });
+    // 
+    console.log('fdjhji');
+    if (Date.now() < end) {
+        requestAnimationFrame(frames2);
+    }
+};
 
 
 ref.on('value', gotData, erData)
@@ -111,7 +148,7 @@ function setup() {
             difficulty = DifficultySlider.value() - 1
         }
     });
-    console.log(difficulty);
+
     board = create2DArray(n, n, "");
     w = width / n;
     h = height / n;
@@ -138,8 +175,7 @@ function reset() {
     currentPlayer = human;
     console.log(result)
     if (result == human) {
-        console.log('dfef')
-        score = score + 10 * difficulty
+        score = score + 10 * (difficulty + 1)
         console.log(score);
         ppp.innerHTML = "Your Score is " + score
     }
@@ -270,6 +306,13 @@ function draw() {
             resultP.innerHTML = 'Tie!';
 
         } else {
+            if (result == human) {
+                frame();
+                console.log('d0');
+            } else {
+                frames2();
+                console.log('d0');
+            }
             resultP.innerHTML = `${result} wins!`;
         }
     }
