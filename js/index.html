@@ -51,28 +51,37 @@
             </div>
         </div>
     </div>
-
-    <div id="game-container" class="center">
-        <div id="title" class="center">
-            <p>Tic - Tac - Toe</p>
+    <div class="row">
+        <div class="col-md-3">
+            <img src="images/robot.jpg" style="height:40vw; width:20vw;margin-left:5px; margin-top:20px;">
         </div>
-        <div id="canvas-container" class="center">
-            <h2 id='score'>Your score is: 0</h2>
-            <label>Ai goes first</label>
-            <input type="checkbox" id='input_check'>
-        </div>
-        <div id="info-bar" class="center">
-            <p id="winner"></p>
-            <p>The AI plays X</p>
-            <button id="reset-button">Reset</button>
-            <br>
-            <div class="form-inline">
-                <p id="difficulty-info">Difficulty: </p>
-                <input id="difficulty" type="range" max="6" min="1" value="6">
+        <div class="col-md-6">
+            <div id="game-container" class="center">
+                <div id="title" class="center">
+                    <p>Tic - Tac - Toe</p>
+                </div>
+                <div id="canvas-container" class="center">
+                    <h2 id='score'>Your score is: 0</h2>
+                    <label>Ai goes first</label>
+                    <input type="checkbox" id='input_check'>
+                </div>
+                <div id="info-bar" class="center">
+                    <p id="winner"></p>
+                    <p>The AI plays X</p>
+                    <button id="reset-button">Reset</button>
+                    <br>
+                    <div class="form-inline">
+                        <p id="difficulty-info">Difficulty: </p>
+                        <input id="difficulty" type="range" max="6" min="1" value="6">
+                    </div>
+                    <label>Username</label>
+                    <input type="text" id='input'>
+                    <button type="submit" id='submit'>Submit</button>
+                </div>
             </div>
-            <label>Username</label>
-            <input type="text" id='input'>
-            <button type="submit" id='submit'>Submit</button>
+        </div>
+        <div class="col-md-2">
+            <img src="images/human.jpg" style="height:40vw; width:22vw;margin-top:20px;">
         </div>
     </div>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
