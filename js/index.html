@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+</head>
+
+<body>
+
+    <div id="game-container" class="center">
+        <div id="title" class="center">
+            <p>Tic - Tac - Toe</p>
+        </div>
+        <div id="canvas-container" class="center">
+            <h2 id='score'>Your score is: 0</h2>
+            <label>Ai goes first</label>
+            <input type="checkbox" id='input_check'>
+        </div>
+        <div id="info-bar" class="center">
+            <p id="winner"></p>
+            <p>The AI plays X</p>
+            <button id="reset-button">Reset</button>
+            <br>
+            <div class="form-inline">
+                <p id="difficulty-info">Difficulty: </p>
+                <input id="difficulty" type="number" max="6" min="1" value="6">
+            </div>
+            <label>Username</label>
+            <input type="text" id='input'>
+            <button type="submit" id='submit'>Submit</button>
+        </div>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-analytics.js"></script>
+    <script src="minimax.js"></script>
+    <script src="sketch.js"></script>
+</body>
+
+</html>
