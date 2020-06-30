@@ -108,10 +108,7 @@ function setup() {
             difficulty = DifficultySlider.value() - 1
         }
     });
-    console.log(difficulty)
-    let pp = document.createElement('p');
-    pp.innerHTML = "</h3><br><h3>Difficulty levels explained</h3><ol><li>almost completly random</li><li>significant randomness in moves</li><li>major randomness in moves</li><li>minor randomness in moves</li><li>insignificant randomness in moves</li><li>Unbeatable</li></ol>";
-    document.getElementById('info-bar').appendChild(pp);
+    console.log(difficulty);
     board = create2DArray(n, n, "");
     w = width / n;
     h = height / n;
