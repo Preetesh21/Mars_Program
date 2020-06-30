@@ -77,7 +77,15 @@ let pp = document.createElement('p');
 let ppp = document.getElementById('score');
 let submit_button = document.getElementById('submit');
 let sttr = document.createElement('h3')
-submit_button.addEventListener('click', fnc);
+submit_button.addEventListener('click', () => {
+    if (document.getElementById('input').value != '') {
+        fnc();
+        document.getElementById('input').value = '';
+    } else {
+        alert('Please write your name');
+    }
+
+});
 
 function fnc() {
     console.log(score);
