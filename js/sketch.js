@@ -74,8 +74,7 @@ function gotData(data) {
     console.log(scoress[ii], namess[ii])
     console.log(scoress)
 
-    sttr.innerHTML = ' Highest score:: ' + scoress[ii] + ' by ' + namess[ii];
-    document.getElementById('canvas-container').appendChild(sttr);
+    document.getElementById('high-score').innerHTML = ' Highest score:: ' + scoress[ii] + ' by ' + namess[ii];
 }
 
 
