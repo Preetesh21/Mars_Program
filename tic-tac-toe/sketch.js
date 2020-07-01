@@ -160,7 +160,7 @@ function reset() {
     }
     currentPlayer = human;
     if (result == human) {
-        score = score + 10 * (difficulty);
+        score = score + 10 * (difficulty + 1);
         ppp.innerHTML = "Score:" + score;
     }
 
