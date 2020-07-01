@@ -196,7 +196,13 @@ function checkWin(board) {
             break
         }
     }
-    if (diagonal) return first
+    if (diagonal) {
+        stroke(255, 0, 0);
+        line(0, 0, w, h);
+        line(w, h, 2 * w, 2 * h);
+        line(2 * w, 2 * h, 3 * w, 3 * h);
+        return first;
+    }
     first = board[0][n - 1];
     let back_diag = first != "";
     for (let i = 1; i <= n; i++) {
@@ -205,8 +211,13 @@ function checkWin(board) {
             break
         }
     }
-    if (back_diag) return first
-
+    if (back_diag) {
+        stroke(255, 0, 0);
+        line(0, 3 * h, w, 2 * h);
+        line(w, 2 * h, 2 * w, h);
+        line(2 * w, h, 3 * w, 0);
+        return first;
+    }
     for (let i = 0; i < n; i++) {
         first = board[i][0]
         let sideways = first != ""
@@ -216,8 +227,12 @@ function checkWin(board) {
                 break
             }
         }
-        if (sideways)
+        if (sideways) {
+            stroke(255, 0, 0);
+            line(i * w + w / 2, 0, i * w + w / 2, 3 * h);
             return first
+        }
+
     }
 
     for (let i = 0; i < n; i++) {
@@ -229,8 +244,11 @@ function checkWin(board) {
                 break
             }
         }
-        if (sideways)
-            return first
+        if (sideways) {
+            stroke(255, 0, 0);
+            line(0, i * h + h / 2, 3 * w, i * h + h / 2);
+            return first;
+        }
     }
 
     let openSpots = 0;
