@@ -12,9 +12,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
-console.log(firebase);
 var database = firebase.database();
-console.log(database)
 var ref = database.ref('score')
 
 var end = Date.now() + (5 * 1000);
@@ -33,7 +31,6 @@ function frame() {
         },
         colors: colors
     });
-    console.log('fdjhji');
     if (Date.now() < end) {
         requestAnimationFrame(frame);
     }
@@ -48,8 +45,6 @@ function frames2() {
         origin: { x: 0 },
         colors: colors
     });
-    // 
-    console.log('fdjhji');
     if (Date.now() < end) {
         requestAnimationFrame(frames2);
     }
@@ -59,10 +54,8 @@ function frames2() {
 ref.on('value', gotData, erData)
 
 function gotData(data) {
-    console.log(data.val());
     var scores = data.val();
     var keys = Object.keys(scores);
-    console.log(keys)
     const namess = []
     const scoress = []
     for (var i = 0; i < keys.length; i = i + 1) {
@@ -70,12 +63,8 @@ function gotData(data) {
         scoress.push(scores[keys[i]].score);
     }
     let ii = scoress.indexOf(Math.max(...scoress));
-    console.log(ii)
-    console.log(scoress[ii], namess[ii])
-    console.log(scoress)
 
-    sttr.innerHTML = ' Highest score:: ' + scoress[ii] + ' by ' + namess[ii];
-    document.getElementById('canvas-container').appendChild(sttr);
+    document.getElementById('high-score').innerHTML = ' Highest score:: ' + scoress[ii] + ' by ' + namess[ii];
 }
 
 
@@ -125,8 +114,6 @@ submit_button.addEventListener('click', () => {
 });
 
 function fnc() {
-    console.log(score);
-    console.log(document.getElementById('input').value)
     var data = {
         name: document.getElementById('input').value,
         score: score
@@ -152,7 +139,6 @@ function setup() {
     board = create2DArray(n, n, "");
     w = width / n;
     h = height / n;
-    console.log(document.getElementById('input_check').checked)
     if (document.getElementById('input_check').checked) {
         bestMove();
         currentPlayer = human;
@@ -167,17 +153,14 @@ function reset() {
     board = create2DArray(n, n, "");
     w = width / n;
     h = height / n;
-    console.log(document.getElementById('input_check').checked)
     if (document.getElementById('input_check').checked) {
         setTimeout(function() { bestMove(); }, 1000);
 
 
     }
     currentPlayer = human;
-    console.log(result)
     if (result == human) {
         score = score + 10 * (difficulty);
-        console.log(score);
         ppp.innerHTML = "Score:" + score;
     }
 
@@ -197,7 +180,13 @@ function checkWin(board) {
             break
         }
     }
-    if (diagonal) return first
+    if (diagonal) {
+        stroke(255, 0, 0);
+        line(0, 0, w, h);
+        line(w, h, 2 * w, 2 * h);
+        line(2 * w, 2 * h, 3 * w, 3 * h);
+        return first;
+    }
     first = board[0][n - 1];
     let back_diag = first != "";
     for (let i = 1; i <= n; i++) {
@@ -206,8 +195,13 @@ function checkWin(board) {
             break
         }
     }
-    if (back_diag) return first
-
+    if (back_diag) {
+        stroke(255, 0, 0);
+        line(0, 3 * h, w, 2 * h);
+        line(w, 2 * h, 2 * w, h);
+        line(2 * w, h, 3 * w, 0);
+        return first;
+    }
     for (let i = 0; i < n; i++) {
         first = board[i][0]
         let sideways = first != ""
@@ -217,8 +211,12 @@ function checkWin(board) {
                 break
             }
         }
-        if (sideways)
+        if (sideways) {
+            stroke(255, 0, 0);
+            line(i * w + w / 2, 0, i * w + w / 2, 3 * h);
             return first
+        }
+
     }
 
     for (let i = 0; i < n; i++) {
@@ -230,8 +228,11 @@ function checkWin(board) {
                 break
             }
         }
-        if (sideways)
-            return first
+        if (sideways) {
+            stroke(255, 0, 0);
+            line(0, i * h + h / 2, 3 * w, i * h + h / 2);
+            return first;
+        }
     }
 
     let openSpots = 0;
@@ -301,8 +302,6 @@ function draw() {
         }
     }
 
-
-
     result = checkWinner();
     if (result != null) {
         resultP.style.fontSize = '32px';
@@ -312,10 +311,8 @@ function draw() {
         } else {
             if (result == human) {
                 frame();
-                console.log('d0');
             } else {
                 frames2();
-                console.log('d0');
             }
             resultP.innerHTML = `${result} wins!`;
         }

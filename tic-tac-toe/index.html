@@ -42,12 +42,15 @@
                     <h3>Scoring Criteria</h3>
                     <ul>
                         <li>WINNER will get points equal to 10 times the difficulty level s/he played.</li>
-                        <li>LOOSER will have to face a penalty of points equal to 10 times the difficulty level.</li>
-                        <li>In case of TIE, NO POINTS will be awarded.</li>
+                        <!-- <li>LOOSER will have to face a penalty of points equal to 10 times the difficulty level.</li> -->
+                        <li>In case of TIE or DEFEAT, NO POINTS will be awarded to the player.</li>
                     </ul>
+                    <h4>Note-The AI plays X</h4>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <center>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </center>
                 </div>
             </div>
         </div>
@@ -64,7 +67,7 @@
                 </div>
                 <div id="canvas-container" class="center">
                     <!-- <h2 id='score'>Your score is: 0</h2> -->
-                    <label>Ai goes first</label>
+                    <label class="glow">Ai goes first</label>
                     <input type="checkbox" id='input_check'>
                 </div>
                 <div id="info-bar" class="center">
@@ -72,10 +75,10 @@
                     <button id="reset-button">Reset</button>
                     <br>
                     <div class="form-inline">
-                        <p id="difficulty-info">Difficulty: </p>
+                        <p id="difficulty-info" class="glow">Difficulty: </p>
                         <input id="difficulty" type="range" max="6" min="1" value="6">
                     </div>
-                    <label>Username</label>
+                    <label class="glow">Username</label>
                     <input type="text" id='input'>
                     <button type="submit" id='submit'>Submit</button>
                 </div>
@@ -83,7 +86,8 @@
         </div>
         <div class="col-md-2">
             <img src="images/man.png" style="height:30vw; width:25vw;margin-top:70px;">
-            <h2 id='score' style="text-align: center;color:rgb(0, 255, 179)">Score: 0</h2>
+            <h2 id='score' style="text-align: center;color:rgb(0, 255, 179);font-size:medium;">Score: 0</h2>
+            <h2 id="high-score" style="text-align: center;color:rgb(0, 255, 179);font-size:medium;"></h2>
         </div>
     </div>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
