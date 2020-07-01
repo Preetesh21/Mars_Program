@@ -175,7 +175,7 @@ function reset() {
     currentPlayer = human;
     console.log(result)
     if (result == human) {
-        score = score + 10 * (difficulty + 1)
+        score = score + 10 * (difficulty);
         console.log(score);
         ppp.innerHTML = "Score:" + score;
     }
