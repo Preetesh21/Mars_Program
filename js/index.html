@@ -54,21 +54,21 @@
     </div>
     <div class="row">
         <div class="col-md-3">
-            <img src="images/robot.jpg" style="height:40vw; width:20vw;margin-left:5px; margin-top:20px;">
+            <img src="images/robo.png" style="height:30vw; width:20vw;margin-left:5px; margin-top:70px;">
+            <p style="text-align: center; color:rgb(0, 255, 179)">The AI plays X</p>
         </div>
         <div class="col-md-6">
             <div id="game-container" class="center">
                 <div id="title" class="center">
-                    <p>Tic - Tac - Toe</p>
+                    <p class="glow">Tic - Tac - Toe</p>
                 </div>
                 <div id="canvas-container" class="center">
-                    <h2 id='score'>Your score is: 0</h2>
+                    <!-- <h2 id='score'>Your score is: 0</h2> -->
                     <label>Ai goes first</label>
                     <input type="checkbox" id='input_check'>
                 </div>
                 <div id="info-bar" class="center">
                     <p id="winner"></p>
-                    <p>The AI plays X</p>
                     <button id="reset-button">Reset</button>
                     <br>
                     <div class="form-inline">
@@ -82,7 +82,8 @@
             </div>
         </div>
         <div class="col-md-2">
-            <img src="images/human.png" style="height:40vw; width:22vw;margin-top:20px;">
+            <img src="images/man.png" style="height:30vw; width:25vw;margin-top:70px;">
+            <h2 id='score' style="text-align: center;color:rgb(0, 255, 179)">Score: 0</h2>
         </div>
     </div>
     <!-- The core Firebase JS SDK is always required and must be listed first -->

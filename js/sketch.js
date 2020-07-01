@@ -161,7 +161,7 @@ function setup() {
 
 
 function reset() {
-    ppp.innerHTML = "Your Score is " + score
+    ppp.innerHTML = "Score:" + score;
     draw()
     resultP.innerHTML = ''
     board = create2DArray(n, n, "");
@@ -177,7 +177,7 @@ function reset() {
     if (result == human) {
         score = score + 10 * (difficulty + 1)
         console.log(score);
-        ppp.innerHTML = "Your Score is " + score
+        ppp.innerHTML = "Score:" + score;
     }
 
 }
@@ -276,8 +276,9 @@ window.addEventListener('click', e => {
 });
 
 function draw() {
-    background(255);
+    background(0);
     strokeWeight(4);
+    stroke(255);
     line(w, 0, w, height);
     line(w * 2, 0, w * 2, height);
     line(0, h, width, h);
@@ -298,6 +299,8 @@ function draw() {
             }
         }
     }
+
+
 
     result = checkWinner();
     if (result != null) {
