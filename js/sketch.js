@@ -169,7 +169,8 @@ function reset() {
     h = height / n;
     console.log(document.getElementById('input_check').checked)
     if (document.getElementById('input_check').checked) {
-        bestMove();
+        setTimeout(function() { bestMove(); }, 1000);
+
 
     }
     currentPlayer = human;
@@ -268,7 +269,7 @@ window.addEventListener('click', e => {
                         return scores[result];
                     }
                     currentPlayer = ai;
-                    bestMove();
+                    setTimeout(function() { bestMove(); }, 1000);
                 }
             }
         }
