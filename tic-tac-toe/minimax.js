@@ -20,12 +20,15 @@ function bestMove() {
     }
     board[move.i][move.j] = ai;
     currentPlayer = human;
-    bestMove2();
 
 }
 
-function bestMove2() {
+function bestMove2(x) {
     // AI to make its turn
+    if (x)
+        var d = 25;
+    else
+        d = -25;
     let bestScore = -Infinity;
     let move;
     for (let i = 0; i < n; i++) {
@@ -33,7 +36,7 @@ function bestMove2() {
             // Is the spot available?
             if (board[i][j] == '') {
                 board[i][j] = ai;
-                let score = minimax2(board, 2, false);
+                let score = minimax2(board, d, x);
                 board[i][j] = '';
                 if (score > bestScore) {
                     bestScore = score;
@@ -45,6 +48,8 @@ function bestMove2() {
     }
     if (move != null)
         console.log(move.j, move.i, 'human')
+        //return (move.j, move.i);
+    alert("x axis" + move.j + ' y axis' + move.i);
 }
 
 

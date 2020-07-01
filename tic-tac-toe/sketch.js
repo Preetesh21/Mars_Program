@@ -113,6 +113,14 @@ submit_button.addEventListener('click', () => {
 
 });
 
+document.getElementById('hint-button').addEventListener('click', () => {
+    if (document.getElementById('input_check').checked) {
+        bestMove2(true);
+    } else {
+        bestMove2(false);
+    }
+});
+
 function fnc() {
     var data = {
         name: document.getElementById('input').value,
