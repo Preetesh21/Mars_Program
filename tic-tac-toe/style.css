@@ -44,6 +44,7 @@ canvas {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    text-align: center;
 }
 
 .form-inline p {
@@ -84,4 +85,55 @@ canvas {
     to {
         text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
     }
+}
+
+#reset-button,
+#hint-button,
+#submit {
+    border: 0;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: cursive;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#reset-button:hover {
+    background-color: black;
+    color: #FF9933;
+}
+
+#hint-button:hover {
+    background-color: black;
+    color: chartreuse;
+}
+
+#submit:hover {
+    background-color: black;
+    color: cyan;
+}
+
+#submit:focus,
+#reset-button:focus,
+#hint-button:focus {
+    outline: 0;
+}
+
+#input {
+    width: 150px;
+}
+
+#name-input {
+    text-align: center;
+    padding: 0;
+}
+
+#username {
+    margin-left: 140px;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
 }

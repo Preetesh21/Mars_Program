@@ -289,6 +289,7 @@ function draw() {
     background(0);
     strokeWeight(4);
     stroke(255);
+    fill(0);
     line(w, 0, w, height);
     line(w * 2, 0, w * 2, height);
     line(0, h, width, h);
