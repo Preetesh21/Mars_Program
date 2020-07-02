@@ -208,7 +208,7 @@ function checkWin(board) {
         }
     }
     if (diagonal) {
-        stroke(255, 0, 0);
+        if (first == human) { stroke(255, 0, 0); } else { stroke(0, 0, 255); }
         line(0, 0, w, h);
         line(w, h, 2 * w, 2 * h);
         line(2 * w, 2 * h, 3 * w, 3 * h);
@@ -223,7 +223,7 @@ function checkWin(board) {
         }
     }
     if (back_diag) {
-        stroke(255, 0, 0);
+        if (first == human) { stroke(255, 0, 0); } else { stroke(0, 0, 255); }
         line(0, 3 * h, w, 2 * h);
         line(w, 2 * h, 2 * w, h);
         line(2 * w, h, 3 * w, 0);
@@ -239,7 +239,7 @@ function checkWin(board) {
             }
         }
         if (sideways) {
-            stroke(255, 0, 0);
+            if (first == human) { stroke(255, 0, 0); } else { stroke(0, 0, 255); }
             line(i * w + w / 2, 0, i * w + w / 2, 3 * h);
             return first
         }
@@ -256,7 +256,7 @@ function checkWin(board) {
             }
         }
         if (sideways) {
-            stroke(255, 0, 0);
+            if (first == human) { stroke(255, 0, 0); } else { stroke(0, 0, 255); }
             line(0, i * h + h / 2, 3 * w, i * h + h / 2);
             return first;
         }
@@ -321,6 +321,7 @@ window.addEventListener('click', e => {
 function draw() {
     background(0);
     strokeWeight(4);
+    fill(0);
     stroke(255);
     line(w, 0, w, height);
     line(w * 2, 0, w * 2, height);
@@ -335,8 +336,10 @@ function draw() {
             textSize(32);
             let r = w / 4;
             if (spot == human) {
+                stroke(255, 0, 0);
                 ellipse(x, y, r * 2);
             } else if (spot == ai) {
+                stroke(0, 0, 255);
                 line(x - r, y - r, x + r, y + r);
                 line(x + r, y - r, x - r, y + r);
             }

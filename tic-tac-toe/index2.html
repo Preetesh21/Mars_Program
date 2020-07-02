@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style2.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -21,40 +21,6 @@
 </head>
 
 <body>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Directions</h5>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h3>Difficulty levels explained</h3>
-                    <ol>
-                        <li>almost completly random</li>
-                        <li>significant randomness in moves</li>
-                        <li>major randomness in moves</li>
-                        <li>minor randomness in moves</li>
-                        <li>insignificant randomness in moves</li>
-                        <li>Unbeatable</li>
-                    </ol><br>
-                    <h3>Scoring Criteria</h3>
-                    <ul>
-                        <li>WINNER will get points equal to 10 times the difficulty level s/he played.</li>
-                        <!-- <li>LOOSER will have to face a penalty of points equal to 10 times the difficulty level.</li> -->
-                        <li>In case of TIE or DEFEAT, NO POINTS will be awarded to the player.</li>
-                    </ul>
-                    <h4>Note-The AI plays X</h4>
-                </div>
-                <div class="modal-footer">
-                    <center>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </center>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="row">
         <div class="col-md-3">
             <img src="images/man.png" style="height:30vw; width:20vw;margin-left:5px; margin-top:70px;">
@@ -77,9 +43,9 @@
                     <button id="reset-button">Reset</button>
                     <button id="hint-button" style="position: relative;left:100px;">HINT</button>
                     <br>
-                    <label class="glow">Username1</label>
+                    <label>Username1</label>
                     <input type="text" id='input1'>
-                    <label class="glow">Username2</label>
+                    <label>Username2</label>
                     <input type="text" id='input'>
                     <button type="submit" id='submit'>Submit</button>
                 </div>
