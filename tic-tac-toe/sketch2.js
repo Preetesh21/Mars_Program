@@ -208,7 +208,7 @@ function checkWin(board) {
         }
     }
     if (diagonal) {
-        if (first == human) { stroke(255, 0, 0); } else { stroke(0, 0, 255); }
+        if (first == human) { ctx.shadowColor = "red"; } else { ctx.shadowColor = "blue"; }
         line(0, 0, w, h);
         line(w, h, 2 * w, 2 * h);
         line(2 * w, 2 * h, 3 * w, 3 * h);
@@ -223,7 +223,7 @@ function checkWin(board) {
         }
     }
     if (back_diag) {
-        if (first == human) { stroke(255, 0, 0); } else { stroke(0, 0, 255); }
+        if (first == human) { ctx.shadowColor = "red"; } else { ctx.shadowColor = "blue"; }
         line(0, 3 * h, w, 2 * h);
         line(w, 2 * h, 2 * w, h);
         line(2 * w, h, 3 * w, 0);
@@ -239,7 +239,7 @@ function checkWin(board) {
             }
         }
         if (sideways) {
-            if (first == human) { stroke(255, 0, 0); } else { stroke(0, 0, 255); }
+            if (first == human) { ctx.shadowColor = "red"; } else { ctx.shadowColor = "blue"; }
             line(i * w + w / 2, 0, i * w + w / 2, 3 * h);
             return first
         }
@@ -256,7 +256,7 @@ function checkWin(board) {
             }
         }
         if (sideways) {
-            if (first == human) { stroke(255, 0, 0); } else { stroke(0, 0, 255); }
+            if (first == human) { ctx.shadowColor = "red"; } else { ctx.shadowColor = "blue"; }
             line(0, i * h + h / 2, 3 * w, i * h + h / 2);
             return first;
         }
@@ -275,6 +275,10 @@ function checkWin(board) {
         return 'tie';
     }
     return null;
+}
+
+function checkWinner() {
+    return checkWin(board)
 }
 
 function checkWinner() {
@@ -323,6 +327,8 @@ function draw() {
     strokeWeight(4);
     fill(0);
     stroke(255);
+    ctx.shadowBlur = 10;
+    ctx.shadowColor = "rgb(57,255,20)";
     line(w, 0, w, height);
     line(w * 2, 0, w * 2, height);
     line(0, h, width, h);
@@ -336,10 +342,12 @@ function draw() {
             textSize(32);
             let r = w / 4;
             if (spot == human) {
-                stroke(255, 0, 0);
+                ctx.shadowColor = "red";
+                // stroke(255, 0, 0);
                 ellipse(x, y, r * 2);
             } else if (spot == ai) {
-                stroke(0, 0, 255);
+                ctx.shadowColor = "blue";
+                // stroke(0, 0, 255);
                 line(x - r, y - r, x + r, y + r);
                 line(x + r, y - r, x - r, y + r);
             }
