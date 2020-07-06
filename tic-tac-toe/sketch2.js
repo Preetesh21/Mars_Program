@@ -95,7 +95,7 @@ let board = [
     ['', '', ''],
     ['', '', '']
 ];
-
+var ctx;
 var w; // = width / 3;
 var h; // = height / 3;
 var result;
@@ -150,7 +150,11 @@ function fnc() {
 
 
 function setup() {
-    createCanvas(500, 400).parent("canvas-container");
+    var cnv = createCanvas(500, 400);
+    cnv.parent("canvas-container");
+    cnv.id("canvas");
+    var canv = document.getElementById("canvas");
+    ctx = canv.getContext("2d");
     resetButton = document.getElementById('reset-button');
     resetButton.addEventListener('click', reset);
     resultP = document.getElementById('winner');
