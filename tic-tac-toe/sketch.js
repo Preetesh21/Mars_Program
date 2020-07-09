@@ -148,8 +148,10 @@ function setup() {
     resultP = document.getElementById('winner');
     DifficultySlider = select("#difficulty");
     DifficultySlider.input(() => {
+
         if (difficulty != DifficultySlider.value()) {
-            difficulty = DifficultySlider.value() - 1
+            difficulty = DifficultySlider.value() - 1;
+		reset();
         }
     });
 

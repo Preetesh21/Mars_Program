@@ -94,6 +94,8 @@ canvas {
     display: flexbox;
 }
 
+#Note {
+font-size: 19px;}
 .board {
     width: 50%;
     display: flexbox;
