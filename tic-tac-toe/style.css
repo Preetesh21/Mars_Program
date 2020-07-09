@@ -13,14 +13,8 @@ canvas {
     display: block;
 }
 
-#canvas-container {
-    width: fit-content;
-    padding: 20px;
-    border-radius: 25px;
-}
-
 #game-container {
-    min-width: fit-content;
+    width: fit-content;
     color: magenta;
 }
 
@@ -33,11 +27,6 @@ canvas {
 
 #info-bar p {
     font-size: 20px;
-}
-
-.center {
-    margin: auto;
-    width: 50%;
 }
 
 .form-inline {
@@ -75,7 +64,7 @@ canvas {
 }
 
 #title {
-    font-size: 80px;
+    font-size: 60px;
 }
 
 @-webkit-keyframes glow {

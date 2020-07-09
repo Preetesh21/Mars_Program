@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
@@ -21,42 +21,44 @@
 </head>
 
 <body>
-    <div class="row">
-        <div class="col-md-3">
-            <img src="images/man.png" style="height:30vw; width:20vw;margin-left:5px; margin-top:70px;">
-            <h2 id='score' style="text-align: center;color:rgb(0, 255, 179);font-size:medium;">Score: 0</h2>
-            <h2 id="high-score" style="text-align: center;color:rgb(0, 255, 179);font-size:medium;"></h2>
-            <p style="text-align: center; color:rgb(0, 255, 179)"></p>
-        </div>
-        <div class="col-md-6">
-            <div id="game-container" class="center">
-                <div id="title" class="center">
-                    <p class="glow">Tic - Tac - Toe</p>
-                </div>
-                <div id="canvas-container" class="center">
-                    <!-- <h2 id='score'>Your score is: 0</h2> -->
-                    <label class="glow">X goes first</label>
-                    <input type="checkbox" id='input_check'>
-                </div>
-                <div id="info-bar" class="center">
-                    <p id="winner"></p>
-                    <button id="reset-button">Reset</button>
-                    <button id="hint-button" style="position: relative;left:100px;">HINT</button>
-                    <br>
-                    <label>Username1</label>
-                    <input type="text" id='input1'>
-                    <label>Username2</label>
-                    <input type="text" id='input'>
-                    <button type="submit" id='submit'>Submit</button>
+    <center>
+        <div class="row">
+            <div class="col-md-3">
+                <img src="images/man.png" style="height:30vw; width:20vw;margin-left:5px; margin-top:70px;">
+                <h2 id='score' style="text-align: center;color:rgb(0, 255, 179);font-size:medium;">Score: 0</h2>
+                <h2 id="high-score" style="text-align: center;color:rgb(0, 255, 179);font-size:medium;"></h2>
+                <p style="text-align: center; color:rgb(0, 255, 179)"></p>
+            </div>
+            <div class="col-md-6">
+                <div id="game-container" class="center">
+                    <div id="title" class="center">
+                        <p class="glow">Tic - Tac - Toe</p>
+                    </div>
+                    <div id="canvas-container" class="center">
+                        <!-- <h2 id='score'>Your score is: 0</h2> -->
+                        <label class="glow">X goes first</label>
+                        <input type="checkbox" id='input_check'>
+                    </div>
+                    <div id="info-bar" class="center">
+                        <p id="winner"></p>
+                        <button id="reset-button">Reset</button>
+                        <button id="hint-button" style="position: relative;left:100px;">HINT</button>
+                        <br>
+                        <label>Username1</label>
+                        <input type="text" id='input1'>
+                        <label>Username2</label>
+                        <input type="text" id='input'>
+                        <button type="submit" id='submit'>Submit</button>
+                    </div>
                 </div>
             </div>
+            <div class="col-md-2">
+                <img src="images/man.png" style="height:30vw; width:25vw;margin-top:70px;">
+                <h2 id='score2' style="text-align: center;color:rgb(0, 255, 179);font-size:medium;">Score: 0</h2>
+                <h2 id="high-score2" style="text-align: center;color:rgb(0, 255, 179);font-size:medium;"></h2>
+            </div>
         </div>
-        <div class="col-md-2">
-            <img src="images/man.png" style="height:30vw; width:25vw;margin-top:70px;">
-            <h2 id='score2' style="text-align: center;color:rgb(0, 255, 179);font-size:medium;">Score: 0</h2>
-            <h2 id="high-score2" style="text-align: center;color:rgb(0, 255, 179);font-size:medium;"></h2>
-        </div>
-    </div>
+    </center>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
