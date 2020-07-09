@@ -13,6 +13,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.2.0/dist/confetti.browser.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#exampleModalCenter").modal('show');
+        });
+    </script>
 </head>
 
 <body>
@@ -30,7 +35,7 @@
                 </div>
                 <div id="canvas-container" class="center">
                     <!-- <h2 id='score'>Your score is: 0</h2> -->
-                    <label>X goes first</label>
+                    <label class="glow">X goes first</label>
                     <input type="checkbox" id='input_check'>
                 </div>
                 <div id="info-bar" class="center">
@@ -38,15 +43,15 @@
                     <button id="reset-button">Reset</button>
                     <button id="hint-button" style="position: relative;left:100px;">HINT</button>
                     <br>
-                    <label>Username1:</label>
-                    <input type="text" id='input1' style="width: 150px;">
-                    <label>Username2:</label>
+                    <label>Username1</label>
+                    <input type="text" id='input1'>
+                    <label>Username2</label>
                     <input type="text" id='input'>
                     <button type="submit" id='submit'>Submit</button>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <img src="images/man.png" style="height:30vw; width:25vw;margin-top:70px;">
             <h2 id='score2' style="text-align: center;color:rgb(0, 255, 179);font-size:medium;">Score: 0</h2>
             <h2 id="high-score2" style="text-align: center;color:rgb(0, 255, 179);font-size:medium;"></h2>
