@@ -30,7 +30,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h3>Difficulty levels explained:-</h3>
+                    <h3>Difficulty Levels explained:-</h3>
                     <ol>
                         <li>Very Easy</li>
                         <li>Easy</li>
@@ -44,9 +44,16 @@
                         <li>WINNER will get points equal to 10 times the difficulty level s/he played.</li>
                         <!-- <li>LOOSER will have to face a penalty of points equal to 10 times the difficulty level.</li> -->
                         <li>In case of TIE or DEFEAT, NO POINTS will be awarded to the player.</li>
+			
                     </ul>
                     <h4>Note-The AI plays X</h4>
+ 		
                 </div>
+ <div class="form-inline">
+
+                        <p id="difficulty-info">Choose your desired Difficulty level </p>
+                        <input id="difficulty" type="range" max="6" min="1" value="6">
+                    </div>
                 <div class="modal-footer">
                     <center>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -68,16 +75,13 @@
                     </div>
                     <div id="canvas-container">
                         <!-- <h2 id='score'>Your score is: 0</h2> -->
-                        <label>Ai goes first</label>
+                        <label>AI goes first</label>
                         <input type="checkbox" id='input_check'>
                     </div>
-                    <div class="form-inline">
-                        <p id="difficulty-info">Difficulty </p>
-                        <input id="difficulty" type="range" max="6" min="1" value="6">
-                    </div>
+                   
                     <div id="info-bar">
                         <p id="winner"></p>
-                        <button id="reset-button">Reset</button>
+                        <button id="reset-button">RESET</button>
                         <button id="hint-button" style="position: relative;left:60px;">HINT</button>
                         <br>
                     </div>
