@@ -49,7 +49,7 @@ function bestMove2(x) {
     if (move != null)
         console.log(move.j, move.i, 'human')
         //return (move.j, move.i);
-    alert("HINT\n" + "x axis" + move.j + ' y axis' + move.i);
+    alert("HINT:-\n" + "You can have your next move at ("+move.j + ","+move.i+").\n ie X axis : " + move.j + ' and Y axis : ' + move.i + "\n\n Note: This is only a Hint.");
 }
 
 

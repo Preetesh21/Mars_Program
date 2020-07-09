@@ -23,11 +23,11 @@ var colors = ["#FFDF00", '#bb0000', '#ffffff'];
 function frame() {
 
     confetti({
-        particleCount: 2,
-        angle: 120,
-        spread: 55,
+        particleCount: 100,
+       angle: 60,
+        spread: 70,
         origin: {
-            x: 1
+            x: 2
         },
         colors: colors
     });
