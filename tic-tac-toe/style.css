@@ -65,6 +65,16 @@ canvas {
     animation: glow 1s ease-in-out infinite alternate;
 }
 
+.glow2 {
+    color: #fff;
+	
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-out infinite alternate;
+    animation: glow 1s ease-out infinite alternate;
+	
+    font-size:30px;
+}
 #title {
     font-size: 60px;
 }
