@@ -78,6 +78,17 @@ canvas {
     }
 }
 
+.robo,
+.man {
+    width: 25%;
+    display: flexbox;
+}
+
+.board {
+    width: 50%;
+    display: flexbox;
+}
+
 #reset-button,
 #hint-button,
 #submit {
