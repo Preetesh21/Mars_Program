@@ -11,6 +11,8 @@ body {
 
 canvas {
     display: block;
+    width: 30vw;
+    height: 30vw;
 }
 
 #game-container {

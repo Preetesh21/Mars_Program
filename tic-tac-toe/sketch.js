@@ -133,7 +133,16 @@ function fnc() {
 
 
 function setup() {
-    createCanvas(500, 400).parent("canvas-container");
+    var cnv = createCanvas(500, 400);
+    cnv.parent("canvas-container");
+    cnv.id("canvas");
+    var canv = document.getElementById("canvas");
+
+    canv.style.width = "30vw";
+    canv.style.height = "30vw";
+
+    // canv.width = "30vw";
+    // canv.height = "30vw";
     resetButton = document.getElementById('reset-button');
     resetButton.addEventListener('click', reset);
     resultP = document.getElementById('winner');
