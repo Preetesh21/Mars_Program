@@ -23,11 +23,11 @@ var colors = ["#FFDF00", '#bb0000', '#ffffff'];
 function frame() {
 
     confetti({
-        particleCount: 2,
-        angle: 120,
-        spread: 55,
+        particleCount: 100,
+       angle: 60,
+        spread: 70,
         origin: {
-            x: 1
+            x: 2
         },
         colors: colors
     });
@@ -133,14 +133,25 @@ function fnc() {
 
 
 function setup() {
-    createCanvas(500, 400).parent("canvas-container");
+    var cnv = createCanvas(500, 400);
+    cnv.parent("canvas-container");
+    cnv.id("canvas");
+    var canv = document.getElementById("canvas");
+
+    canv.style.width = "30vw";
+    canv.style.height = "30vw";
+
+    // canv.width = "30vw";
+    // canv.height = "30vw";
     resetButton = document.getElementById('reset-button');
     resetButton.addEventListener('click', reset);
     resultP = document.getElementById('winner');
     DifficultySlider = select("#difficulty");
     DifficultySlider.input(() => {
+
         if (difficulty != DifficultySlider.value()) {
-            difficulty = DifficultySlider.value() - 1
+            difficulty = DifficultySlider.value() - 1;
+		reset();
         }
     });
 

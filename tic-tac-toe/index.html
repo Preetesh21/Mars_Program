@@ -30,13 +30,13 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h3>Difficulty levels explained</h3>
+                    <h3>Difficulty levels explained:-</h3>
                     <ol>
-                        <li>almost completly random</li>
-                        <li>significant randomness in moves</li>
-                        <li>major randomness in moves</li>
-                        <li>minor randomness in moves</li>
-                        <li>insignificant randomness in moves</li>
+                        <li>Very Easy</li>
+                        <li>Easy</li>
+                        <li>Medium</li>
+                        <li>Hard</li>
+                        <li>Very Hard</li>
                         <li>Unbeatable</li>
                     </ol><br>
                     <h3>Scoring Criteria</h3>
@@ -45,7 +45,14 @@
                         <!-- <li>LOOSER will have to face a penalty of points equal to 10 times the difficulty level.</li> -->
                         <li>In case of TIE or DEFEAT, NO POINTS will be awarded to the player.</li>
                     </ul>
-                    <h4>Note-The AI plays X</h4>
+                    <h4>Note-
+			<ul id="Note">
+			<li>The AI plays X</li>
+			<li>Score board will be updated after pressing RESET </li>
+			<li>You can't change the difficulty level in the game. If you do so, then it will Restart automatically.</li>
+
+			</ul>
+				</h4>
                 </div>
                 <div class="modal-footer">
                     <center>
@@ -57,18 +64,18 @@
     </div>
     <center>
         <div class="row">
-            <div class="col-md-3">
-                <img src="images/robo.png" style="height:30vw; width:20vw; margin-top:70px;">
+            <div class="robo">
+                <img src="images/robo.png" style="height:30vw; width:20vw; margin-top:120px;">
                 <p style="text-align: center; color:rgb(0, 255, 179)">The AI plays X</p>
             </div>
-            <div class="col-md-6">
+            <div class="board">
                 <div id="game-container">
                     <div id="title">
                         <p class="glow">Tic - Tac - Toe</p>
                     </div>
                     <div id="canvas-container">
                         <!-- <h2 id='score'>Your score is: 0</h2> -->
-                        <label>Ai goes first</label>
+                        <label>AI goes first</label>
                         <input type="checkbox" id='input_check'>
                     </div>
                     <div class="form-inline">
@@ -77,19 +84,18 @@
                     </div>
                     <div id="info-bar">
                         <p id="winner"></p>
-                        <button id="reset-button">Reset</button>
+                        <button id="reset-button">RESET</button>
                         <button id="hint-button" style="position: relative;left:60px;">HINT</button>
                         <br>
                     </div>
-                    <label id="username">Username</label><br>
                     <div id="name-input">
-                        <input type="text" id='input'>
-                        <button type="submit" id='submit'>Submit</button>
+                      USERNAME <input type="text" id='input'>
+                      <br>  <button type="submit" id='submit'>Submit</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <img src="images/man.png" style="height:30vw; width:25vw;margin-top:70px;">
+            <div class="man">
+                <img src="images/man.png" style="height:30vw; width:25vw;margin-top:120px;">
                 <h2 id='score' style="text-align: center;color:rgb(0, 255, 179);font-size:medium;">Score: 0</h2>
                 <h2 id="high-score" style="text-align: center;color:rgb(0, 255, 179);font-size:medium;"></h2>
             </div>

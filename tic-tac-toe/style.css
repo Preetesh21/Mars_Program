@@ -11,6 +11,8 @@ body {
 
 canvas {
     display: block;
+    width: 30vw;
+    height: 30vw;
 }
 
 #game-container {
@@ -59,10 +61,20 @@ canvas {
     color: #fff;
     text-align: center;
     -webkit-animation: glow 1s ease-in-out infinite alternate;
-    -moz-animation: glow 1s ease-in-out infinite alternate;
-    animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-out infinite alternate;
+    animation: glow 1s ease-out infinite alternate;
 }
 
+.glow2 {
+    color: #fff;
+	
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-out infinite alternate;
+    animation: glow 1s ease-out infinite alternate;
+	
+    font-size:30px;
+}
 #title {
     font-size: 60px;
 }
@@ -74,6 +86,19 @@ canvas {
     to {
         text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
     }
+}
+
+.robo,
+.man {
+    width: 25%;
+    display: flexbox;
+}
+
+#Note {
+font-size: 19px;}
+.board {
+    width: 50%;
+    display: flexbox;
 }
 
 #reset-button,
@@ -122,6 +147,7 @@ canvas {
 #username {
     margin-left: 140px;
     margin-bottom: 0;
+
     font-size: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
