@@ -1,7 +1,7 @@
 body {
     padding-top: 80px;
     height: 100%;
-    background: linear-gradient(rgb(255, 255, 255, .7), rgb(255, 255, 255, .7)), url(../mars-rover-cartoon.jpg) no-repeat center center fixed;
+    background: linear-gradient(rgb(255, 255, 255, .7), rgb(255, 255, 255, .7)), url(./mars-rover-cartoon.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
