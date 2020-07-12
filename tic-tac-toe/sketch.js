@@ -15,40 +15,10 @@ firebase.analytics();
 var database = firebase.database();
 var ref = database.ref('score')
 
-var end = Date.now() + (5 * 1000);
 
 // go Buckeyes!
 var colors = ["#FFDF00", '#bb0000', '#ffffff'];
 
-function frame() {
-
-    confetti({
-        particleCount: 100,
-       angle: 60,
-        spread: 70,
-        origin: {
-            x: 2
-        },
-        colors: colors
-    });
-    if (Date.now() < end) {
-        requestAnimationFrame(frame);
-    }
-};
-
-function frames2() {
-
-    confetti({
-        particleCount: 2,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0 },
-        colors: colors
-    });
-    if (Date.now() < end) {
-        requestAnimationFrame(frames2);
-    }
-};
 
 
 ref.on('value', gotData, erData)
@@ -151,7 +121,7 @@ function setup() {
 
         if (difficulty != DifficultySlider.value()) {
             difficulty = DifficultySlider.value() - 1;
-		reset();
+            reset();
         }
     });
 
@@ -331,11 +301,7 @@ function draw() {
             resultP.innerHTML = 'Tie!';
 
         } else {
-            if (result == human) {
-                frame();
-            } else {
-                frames2();
-            }
+            if (result == human) {}
             resultP.innerHTML = `${result} wins!`;
         }
     }
