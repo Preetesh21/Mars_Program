@@ -40,12 +40,12 @@ function gotData(data) {
     }
     if (Math.max(...scoress) >= Math.max(...scoress2)) {
         var ii = scoress.indexOf(Math.max(...scoress));
-        document.getElementById('high-score2').innerHTML = ' Highest score:: ' + scoress[ii] + ' by ' + namess[ii];
-        document.getElementById('high-score').innerHTML = ' Highest score:: ' + scoress[ii] + ' by ' + namess[ii];
+       
+        document.getElementById('high-score').innerHTML = 'Overall Highest score:: ' + scoress[ii] + ' by ' + namess[ii];
     } else {
         ii = scoress2.indexOf(Math.max(...scoress2));
-        document.getElementById('high-score2').innerHTML = ' Highest score:: ' + scoress2[ii] + ' by ' + namess2[ii];
-        document.getElementById('high-score').innerHTML = ' Highest score:: ' + scoress2[ii] + ' by ' + namess2[ii];
+      
+        document.getElementById('high-score').innerHTML = 'Overall Highest score:: ' + scoress2[ii] + ' by ' + namess2[ii];
     }
 }
 
