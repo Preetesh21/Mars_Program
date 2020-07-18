@@ -39,6 +39,42 @@ async function getData() {
     document.getElementById('high-score').innerHTML = ' Highest score:: ' + scoresss[ii] + ' by ' + namesss[ii];
     document.getElementById('high-score2').innerHTML = ' Highest score:: ' + scoresss[ii] + ' by ' + namesss[ii];
 }
+// =======
+
+
+// ref.on('value', gotData, erData)
+
+// function gotData(data) {
+//     var scores = data.val();
+//     var keys = Object.keys(scores);
+//     const namess = []
+//     const scoress = []
+//     for (var i = 0; i< keys.length; i = i + 1) {
+//         namess.push(scores[keys[i]].name1);
+//         scoress.push(scores[keys[i]].score1);
+//     }
+//     const namess2 = []
+//     const scoress2 = []
+//     for (var i = 0; i < keys.length; i = i + 1) {
+//         namess2.push(scores[keys[i]].name2);
+//         scoress2.push(scores[keys[i]].score2);
+//     }
+//     if (Math.max(...scoress) >= Math.max(...scoress2)) {
+//         var ii = scoress.indexOf(Math.max(...scoress));
+
+//         document.getElementById('high-score').innerHTML = 'Overall Highest score:: ' + scoress[ii] + ' by ' + namess[ii];
+//     } else {
+//         ii = scoress2.indexOf(Math.max(...scoress2));
+
+//         document.getElementById('high-score').innerHTML = 'Overall Highest score:: ' + scoress2[ii] + ' by ' + namess2[ii];
+// >>>>>>> 46a24735cb97e9918fbaf48951c0e32b0bca867f
+//     }
+//     console.log(scoresss, namesss)
+//     let ii = scoresss.indexOf(Math.max(...scoresss));
+//     console.log(scoresss[ii], namesss[ii]);
+//     document.getElementById('high-score').innerHTML = ' Highest score:: ' + scoresss[ii] + ' by ' + namesss[ii];
+//     document.getElementById('high-score2').innerHTML = ' Highest score:: ' + scoresss[ii] + ' by ' + namesss[ii];
+// }
 
 
 // ref.on('value', gotData, erData)
@@ -140,11 +176,13 @@ function fnc() {
         body: JSON.stringify(data)
     };
     fetch('/api2', options);
+
     score = 0;
     score2 = 0;
     ppp.innerHTML = "Your score is submitted";
     pppp.innerHTML = 'Your score is submitted';
     getData();
+
 }
 
 
