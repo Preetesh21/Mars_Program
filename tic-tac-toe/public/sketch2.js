@@ -107,15 +107,18 @@ document.getElementById('hint-button').addEventListener('click', () => {
 function fnc() {
     var data = {
         name1: document.getElementById('input').value,
+
         score1: score,
         name2: document.getElementById('input1').value,
         score2: score2
     }
+	
     ref.push(data)
     score = 0;
     score2 = 0;
     ppp.innerHTML = "Your score is submitted";
     pppp.innerHTML = 'Your score is submitted';
+	reset();
 }
 
 
