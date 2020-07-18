@@ -1,57 +1,77 @@
-// Tic Tac Toe AI with Minimax Algorithm
-var firebaseConfig = {
-    apiKey: "AIzaSyDGRhHYAFRqP0tjHYtV1u1WmOct5lVuyaU",
-    authDomain: "trial-1cd60.firebaseapp.com",
-    databaseURL: "https://trial-1cd60.firebaseio.com",
-    projectId: "trial-1cd60",
-    storageBucket: "trial-1cd60.appspot.com",
-    messagingSenderId: "169024788730",
-    appId: "1:169024788730:web:738318b34e6f0043a99143",
-    measurementId: "G-9NTKE56GSZ"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-var database = firebase.database();
-var ref = database.ref('game2')
+// // Tic Tac Toe AI with Minimax Algorithm
+// var firebaseConfig = {
+//     apiKey: "AIzaSyDGRhHYAFRqP0tjHYtV1u1WmOct5lVuyaU",
+//     authDomain: "trial-1cd60.firebaseapp.com",
+//     databaseURL: "https://trial-1cd60.firebaseio.com",
+//     projectId: "trial-1cd60",
+//     storageBucket: "trial-1cd60.appspot.com",
+//     messagingSenderId: "169024788730",
+//     appId: "1:169024788730:web:738318b34e6f0043a99143",
+//     measurementId: "G-9NTKE56GSZ"
+// };
+// // Initialize Firebase
+// firebase.initializeApp(firebaseConfig);
+// firebase.analytics();
+// var database = firebase.database();
+// var ref = database.ref('game2')
 
 
 // go Buckeyes!
 var colors = ["#FFDF00", '#bb0000', '#ffffff'];
 
+getData();
 
-
-ref.on('value', gotData, erData)
-
-function gotData(data) {
-    var scores = data.val();
-    var keys = Object.keys(scores);
-    const namess = []
-    const scoress = []
-    for (var i = 0; i < keys.length; i = i + 1) {
-        namess.push(scores[keys[i]].name1);
-        scoress.push(scores[keys[i]].score1);
+async function getData() {
+    const response = await fetch('/api2');
+    const datass = await response.json();
+    console.log(datass);
+    const namesss = []
+    const scoresss = []
+    for (items in datass) {
+        namesss.push(datass[items].name1);
+        scoresss.push(datass[items].score1);
+        namesss.push(datass[items].name2);
+        scoresss.push(datass[items].score2);
     }
-    const namess2 = []
-    const scoress2 = []
-    for (var i = 0; i < keys.length; i = i + 1) {
-        namess2.push(scores[keys[i]].name2);
-        scoress2.push(scores[keys[i]].score2);
-    }
-    if (Math.max(...scoress) >= Math.max(...scoress2)) {
-        var ii = scoress.indexOf(Math.max(...scoress));
-        document.getElementById('high-score2').innerHTML = ' Highest score:: ' + scoress[ii] + ' by ' + namess[ii];
-        document.getElementById('high-score').innerHTML = ' Highest score:: ' + scoress[ii] + ' by ' + namess[ii];
-    } else {
-        ii = scoress2.indexOf(Math.max(...scoress2));
-        document.getElementById('high-score2').innerHTML = ' Highest score:: ' + scoress2[ii] + ' by ' + namess2[ii];
-        document.getElementById('high-score').innerHTML = ' Highest score:: ' + scoress2[ii] + ' by ' + namess2[ii];
-    }
+    console.log(scoresss, namesss)
+    let ii = scoresss.indexOf(Math.max(...scoresss));
+    console.log(scoresss[ii], namesss[ii]);
+    document.getElementById('high-score').innerHTML = ' Highest score:: ' + scoresss[ii] + ' by ' + namesss[ii];
+    document.getElementById('high-score2').innerHTML = ' Highest score:: ' + scoresss[ii] + ' by ' + namesss[ii];
 }
 
-function erData(err) {
-    console.log(err);
-}
+
+// ref.on('value', gotData, erData)
+
+// function gotData(data) {
+//     var scores = data.val();
+//     var keys = Object.keys(scores);
+//     const namess = []
+//     const scoress = []
+//     for (var i = 0; i < keys.length; i = i + 1) {
+//         namess.push(scores[keys[i]].name1);
+//         scoress.push(scores[keys[i]].score1);
+//     }
+//     const namess2 = []
+//     const scoress2 = []
+//     for (var i = 0; i < keys.length; i = i + 1) {
+//         namess2.push(scores[keys[i]].name2);
+//         scoress2.push(scores[keys[i]].score2);
+//     }
+//     if (Math.max(...scoress) >= Math.max(...scoress2)) {
+//         var ii = scoress.indexOf(Math.max(...scoress));
+//         document.getElementById('high-score2').innerHTML = ' Highest score:: ' + scoress[ii] + ' by ' + namess[ii];
+//         document.getElementById('high-score').innerHTML = ' Highest score:: ' + scoress[ii] + ' by ' + namess[ii];
+//     } else {
+//         ii = scoress2.indexOf(Math.max(...scoress2));
+//         document.getElementById('high-score2').innerHTML = ' Highest score:: ' + scoress2[ii] + ' by ' + namess2[ii];
+//         document.getElementById('high-score').innerHTML = ' Highest score:: ' + scoress2[ii] + ' by ' + namess2[ii];
+//     }
+// }
+
+// function erData(err) {
+//     console.log(err);
+// }
 
 
 function create2DArray(rows, cols, filler = 0) {
@@ -106,16 +126,25 @@ document.getElementById('hint-button').addEventListener('click', () => {
 
 function fnc() {
     var data = {
-        name1: document.getElementById('input').value,
-        score1: score,
-        name2: document.getElementById('input1').value,
-        score2: score2
-    }
-    ref.push(data)
+            name1: document.getElementById('input').value,
+            score1: score,
+            name2: document.getElementById('input1').value,
+            score2: score2
+        }
+        // ref.push(data)
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    };
+    fetch('/api2', options);
     score = 0;
     score2 = 0;
     ppp.innerHTML = "Your score is submitted";
     pppp.innerHTML = 'Your score is submitted';
+    getData();
 }
 
 

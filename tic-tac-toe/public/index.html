@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
@@ -13,103 +13,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.2.0/dist/confetti.browser.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#exampleModalCenter").modal('show');
-        });
-    </script>
 </head>
 
 <body>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Directions</h5>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h3>Difficulty levels explained:-</h3>
-                    <ol>
-                        <li>Very Easy</li>
-                        <li>Easy</li>
-                        <li>Medium</li>
-                        <li>Hard</li>
-                        <li>Very Hard</li>
-                        <li>Unbeatable</li>
-                    </ol><br>
-                    <h3>Scoring Criteria</h3>
-                    <ul>
-                        <li>WINNER will get points equal to 10 times the difficulty level s/he played.</li>
-                        <!-- <li>LOOSER will have to face a penalty of points equal to 10 times the difficulty level.</li> -->
-                        <li>In case of TIE or DEFEAT, NO POINTS will be awarded to the player.</li>
-                    </ul>
-                    <h4>Note-
-                        <ul id="Note">
-                            <li>The AI plays X</li>
-                            <li>Score board will be updated after pressing RESET </li>
-                            <li>You can't change the difficulty level in the game. If you do so, then it will Restart automatically.</li>
+    <div id="Menu">
+        <center>
+            <div id="title">
 
-                        </ul>
-                    </h4>
-                </div>
-                <div class="modal-footer">
-                    <center>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </center>
-                </div>
+                <p class="glow">Tic - Tac - Toe</p>
+                <h1 class="glow2">Let the Game begin</h1>
+
             </div>
+        </center>
+        <div id="options-bar">
+            <img src="images/tictactoe.jpg" style="height:20vw; width:20vw;align:center;">
+            <h3 style="text-align: center;color:white;font-family:cursive;margin-top:10px">Select the Game Mode :</h3>
+            <a href="index1.html">Single Player</a>
+            <a href="index2.html">Multi Players</a>
         </div>
     </div>
-    <center>
-        <div class="row">
-            <div class="robo">
-                <img src="images/robo.png" style="height:30vw; width:20vw; margin-top:120px;">
-                <p style="text-align: center; color:rgb(0, 255, 179)">The AI plays X</p>
-            </div>
-            <div class="board">
-                <div id="game-container">
-                    <div id="title">
-                        <p class="glow">Tic - Tac - Toe</p>
-                    </div>
-                    <div id="canvas-container">
-                        <!-- <h2 id='score'>Your score is: 0</h2> -->
-                        <label>AI goes first</label>
-                        <input type="checkbox" id='input_check'>
-                    </div>
-                    <div class="form-inline">
-                        <p id="difficulty-info">Difficulty </p>
-                        <input id="difficulty" type="range" max="6" min="1" value="6">
-                    </div>
-                    <div id="info-bar">
-                        <p id="winner"></p>
-                        <button id="reset-button">RESET</button>
-                        <button id="hint-button" style="position: relative;left:60px;">HINT</button>
-                        <br>
-                    </div>
-                    <div id="name-input">
-                        USERNAME <input type="text" id='input'>
-                        <br> <button type="submit" id='submit'>Submit</button>
-                    </div>
-                </div>
-            </div>
-            <div class="man">
-                <img src="images/man.png" style="height:30vw; width:25vw;margin-top:120px;">
-                <h2 id='score' style="text-align: center;color:rgb(0, 255, 179);font-size:medium;">Score: 0</h2>
-                <h2 id="high-score" style="text-align: center;color:rgb(0, 255, 179);font-size:medium;"></h2>
-            </div>
-        </div>
-    </center>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script> -->
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-analytics.js"></script> -->
-    <script src="minimax.js"></script>
-    <script src="sketch.js"></script>
 
 
 </body>
