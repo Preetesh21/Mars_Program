@@ -10,9 +10,14 @@ body {
 }
 
 canvas {
-    display: block;
+    display: auto;
     width: 30vw;
     height: 30vw;
+}
+
+#canvas-container {
+    width: 30vw;
+    height: 35vw;
 }
 
 #game-container {
@@ -65,16 +70,17 @@ canvas {
     animation: glow 1s ease-out infinite alternate;
 }
 
+
+/* 
 .glow2 {
     color: #fff;
-	
     text-align: center;
     -webkit-animation: glow 1s ease-in-out infinite alternate;
     -moz-animation: glow 1s ease-out infinite alternate;
     animation: glow 1s ease-out infinite alternate;
-	
-    font-size:30px;
-}
+    font-size: 30px;
+} */
+
 #title {
     font-size: 60px;
 }
@@ -94,11 +100,13 @@ canvas {
     display: flexbox;
 }
 
-#Note {
-font-size: 19px;}
 .board {
     width: 50%;
     display: flexbox;
+}
+
+#Note {
+    font-size: 19px;
 }
 
 #reset-button,
@@ -147,7 +155,6 @@ font-size: 19px;}
 #username {
     margin-left: 140px;
     margin-bottom: 0;
-
     font-size: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
@@ -177,4 +184,44 @@ a:active {
 #options-bar {
     text-align: center;
     margin-top: 60px;
+}
+
+@media(max-width:867px) {
+    .glow {
+        font-size: 5vw;
+        color: #fff;
+        text-align: center;
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-out infinite alternate;
+        animation: glow 1s ease-out infinite alternate;
+    }
+    #reset-button,
+    #hint-button,
+    #submit {
+        border: 0;
+        height: 4vw;
+        width: 11vw;
+        /* border-radius: 10px; */
+        font-size: 2vw;
+        font-family: cursive;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+    }
+    /* #reset-button:hover {
+        background-color: black;
+        color: #FF9933;
+    }
+    #hint-button:hover {
+        background-color: black;
+        color: chartreuse;
+    }
+    #submit:hover {
+        background-color: black;
+        color: cyan;
+    }
+    #submit:focus,
+    #reset-button:focus,
+    #hint-button:focus {
+        outline: 0;
+    } */
 }
