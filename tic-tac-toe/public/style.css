@@ -9,16 +9,19 @@ body {
     background-color: black;
 }
 
+
 canvas {
     display: auto;
     width: 30vw;
     height: 30vw;
 }
 
+
 #canvas-container {
     width: 30vw;
     height: 35vw;
 }
+
 
 #game-container {
     width: fit-content;
@@ -71,7 +74,7 @@ canvas {
 }
 
 
-/* 
+
 .glow2 {
     color: #fff;
     text-align: center;
@@ -79,7 +82,7 @@ canvas {
     -moz-animation: glow 1s ease-out infinite alternate;
     animation: glow 1s ease-out infinite alternate;
     font-size: 30px;
-} */
+} 
 
 #title {
     font-size: 60px;
