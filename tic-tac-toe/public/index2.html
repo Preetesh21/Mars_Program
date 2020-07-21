@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="utf-8" />
+      <!-- HTML5 standard: Unicode 8 - It covers almost all the characters, punctuations,etc. -->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -25,6 +27,7 @@
         <div class="row">
             <div class="robo">
                 <img src="images/man2.png" style="height:30vw; width:15vw;margin-left:5px; margin-top:120px;">
+                <!-- it takes man2.png file from images folder and displays with given height, width and margin -->
                 <h2 id="score" style="text-align: center;color:rgb(0, 255, 179);font-size:medium;">Score: 0</h2>
                 <h2 id="high-score" style="text-align: center;color:rgb(0, 255, 179);font-size:medium;"></h2>
                 <p style="text-align: center; color:rgb(0, 255, 179)"></p>
@@ -37,6 +40,7 @@
                     <div id="canvas-container" class="center">
                         <!-- <h2 id='score'>Your score is: 0</h2> -->
                         <label>X goes first</label>
+                         <!-- checkbox for the user to decide whether X goes first or not -->
                         <input type="checkbox" id='input_check'>
                     </div>
                     <div id="info-bar" class="center">
@@ -50,8 +54,11 @@
             </div>
             <div class="man">
                 <img src="images/man.png" style="height:30vw; width:25vw;margin-top:120px;">
+                <!-- it takes man.png file from images folder and displays with given height, width and margin -->
                 <h2 id='score2' style="text-align: center;color:rgb(0, 255, 179);font-size:medium;">Score: 0</h2>
                 <h2 id="high-score2" style="text-align: center;color:rgb(0, 255, 179);font-size:medium;"></h2>
+                     <!-- It shows current score and highest score of the players -->
+
             </div>
         </div>
     </center>
@@ -62,7 +69,10 @@
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-analytics.js"></script>
-    <script src="sketch2.js"></script>
+   <!-- using google firebase for database -->
+   
+   <!-- using both javascript files such that it can follow the code and perform accordingly -->
+   <script src="sketch2.js"></script>
     <script src="minimax.js"></script>
 
 </body>

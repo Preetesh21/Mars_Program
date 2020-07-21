@@ -22,19 +22,22 @@
 </head>
 
 <body>
-    <!-- Modal - A Dialog box will appear -->
+    <!-- Modal - A Dialog box will appear which will explain the working of game - levels and other infos -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Directions</h5>
-   <!creates a popup just after opening the page to explain everything>
+
+                    
                     </button>
                 </div>
                 <div class="modal-body">
                     <h3>Difficulty levels explained:-</h3>
+                    <!-- here ol means ordered list, ul means unordered list and li - individual items -->
                     <ol><!ordered list>
-                        <li>Very Easy</li><!here we are explaining different levels and after this we'll use different algorithms for every level(random to pure mini max- 1 to 6)>
+                        <li>Very Easy</li>
+                        <!-- here we are explaining different levels and after this we'll use different algorithms for every level(random to pure mini max) - 1 to 6) -->
                         <li>Easy</li>
                         <li>Medium</li>
                         <li>Hard</li>
@@ -60,6 +63,7 @@
                 <div class="modal-footer">
                     <center>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <!-- adding button to close so that player can start the game -->
                     </center>
                 </div>
             </div>
@@ -69,7 +73,7 @@
         <div class="row">
             <div class="robo">
                 <img src="images/robo.png" style="height:30vw; width:20vw; margin-top:120px;">
-		<!it takes robo.png file from images folder and displays with given height, width and margin>
+		<!-- it takes robo.png file from images folder and displays with given height, width and margin -->
                 <!-- <p style="text-align: center; color:rgb(0, 255, 179)">The AI plays X</p> -->
             </div>
             <div class="board">
@@ -95,6 +99,7 @@
                     <div id="name-input">
                         USERNAME <input type="text" id='input'>
                         <br> <button type="submit" id='submit'>Submit</button>
+                        <!-- this is option for username so that when player submits username it's point will be updated in the database -->
                     </div>
                 </div>
             </div>
@@ -112,6 +117,9 @@
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
     <!-- <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-analytics.js"></script> -->
+
+    
+    <!-- using both javascript files such that it can follow the code and perform accordingly -->
     <script src="minimax.js"></script>
     <script src="sketch.js"></script>
 
