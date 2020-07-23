@@ -1,20 +1,3 @@
-// // Tic Tac Toe AI with Minimax Algorithm
-// var firebaseConfig = {
-//     apiKey: "AIzaSyDGRhHYAFRqP0tjHYtV1u1WmOct5lVuyaU",
-//     authDomain: "trial-1cd60.firebaseapp.com",
-//     databaseURL: "https://trial-1cd60.firebaseio.com",
-//     projectId: "trial-1cd60",
-//     storageBucket: "trial-1cd60.appspot.com",
-//     messagingSenderId: "169024788730",
-//     appId: "1:169024788730:web:738318b34e6f0043a99143",
-//     measurementId: "G-9NTKE56GSZ"
-// };
-// // Initialize Firebase
-// firebase.initializeApp(firebaseConfig);
-// firebase.analytics();
-// var database = firebase.database();
-// var ref = database.ref('score')
-// go Buckeyes!
 var colors = ["#FFDF00", '#bb0000', '#ffffff'];
 
 getData();
@@ -34,29 +17,6 @@ async function getData() {
     console.log(scoresss[ii], namesss[ii]);
     document.getElementById('high-score').innerHTML = ' Highest score:: ' + scoresss[ii] + ' by ' + namesss[ii];
 }
-
-
-// ref.on('value', gotData, erData)
-
-// function gotData(data) {
-//     var scores = data.val();
-//     var keys = Object.keys(scores);
-//     const namess = []
-//     const scoress = []
-//     for (var i = 0; i < keys.length; i = i + 1) {
-//         namess.push(scores[keys[i]].name);
-//         scoress.push(scores[keys[i]].score);
-//     }
-//     let ii = scoress.indexOf(Math.max(...scoress));
-
-//     // document.getElementById('high-score').innerHTML = ' Highest score:: ' + scoress[ii] + ' by ' + namess[ii];
-// }
-
-
-// function erData(err) {
-//     console.log(err);
-// }
-
 
 function create2DArray(rows, cols, filler = 0) {
     return new Array(rows).fill().map(() => new Array(cols).fill(filler));

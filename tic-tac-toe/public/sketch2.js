@@ -1,22 +1,3 @@
-// // Tic Tac Toe AI with Minimax Algorithm
-// var firebaseConfig = {
-//     apiKey: "AIzaSyDGRhHYAFRqP0tjHYtV1u1WmOct5lVuyaU",
-//     authDomain: "trial-1cd60.firebaseapp.com",
-//     databaseURL: "https://trial-1cd60.firebaseio.com",
-//     projectId: "trial-1cd60",
-//     storageBucket: "trial-1cd60.appspot.com",
-//     messagingSenderId: "169024788730",
-//     appId: "1:169024788730:web:738318b34e6f0043a99143",
-//     measurementId: "G-9NTKE56GSZ"
-// };
-// // Initialize Firebase
-// firebase.initializeApp(firebaseConfig);
-// firebase.analytics();
-// var database = firebase.database();
-// var ref = database.ref('game2')
-
-
-// go Buckeyes!
 var colors = ["#FFDF00", '#bb0000', '#ffffff'];
 
 getData();
@@ -39,76 +20,6 @@ async function getData() {
     document.getElementById('high-score').innerHTML = ' Highest score:: ' + scoresss[ii] + ' by ' + namesss[ii];
     document.getElementById('high-score2').innerHTML = ' Highest score:: ' + scoresss[ii] + ' by ' + namesss[ii];
 }
-// =======
-
-
-// ref.on('value', gotData, erData)
-
-// function gotData(data) {
-//     var scores = data.val();
-//     var keys = Object.keys(scores);
-//     const namess = []
-//     const scoress = []
-//     for (var i = 0; i< keys.length; i = i + 1) {
-//         namess.push(scores[keys[i]].name1);
-//         scoress.push(scores[keys[i]].score1);
-//     }
-//     const namess2 = []
-//     const scoress2 = []
-//     for (var i = 0; i < keys.length; i = i + 1) {
-//         namess2.push(scores[keys[i]].name2);
-//         scoress2.push(scores[keys[i]].score2);
-//     }
-//     if (Math.max(...scoress) >= Math.max(...scoress2)) {
-//         var ii = scoress.indexOf(Math.max(...scoress));
-
-//         document.getElementById('high-score').innerHTML = 'Overall Highest score:: ' + scoress[ii] + ' by ' + namess[ii];
-//     } else {
-//         ii = scoress2.indexOf(Math.max(...scoress2));
-
-//         document.getElementById('high-score').innerHTML = 'Overall Highest score:: ' + scoress2[ii] + ' by ' + namess2[ii];
-// >>>>>>> 46a24735cb97e9918fbaf48951c0e32b0bca867f
-//     }
-//     console.log(scoresss, namesss)
-//     let ii = scoresss.indexOf(Math.max(...scoresss));
-//     console.log(scoresss[ii], namesss[ii]);
-//     document.getElementById('high-score').innerHTML = ' Highest score:: ' + scoresss[ii] + ' by ' + namesss[ii];
-//     document.getElementById('high-score2').innerHTML = ' Highest score:: ' + scoresss[ii] + ' by ' + namesss[ii];
-// }
-
-
-// ref.on('value', gotData, erData)
-
-// function gotData(data) {
-//     var scores = data.val();
-//     var keys = Object.keys(scores);
-//     const namess = []
-//     const scoress = []
-//     for (var i = 0; i < keys.length; i = i + 1) {
-//         namess.push(scores[keys[i]].name1);
-//         scoress.push(scores[keys[i]].score1);
-//     }
-//     const namess2 = []
-//     const scoress2 = []
-//     for (var i = 0; i < keys.length; i = i + 1) {
-//         namess2.push(scores[keys[i]].name2);
-//         scoress2.push(scores[keys[i]].score2);
-//     }
-//     if (Math.max(...scoress) >= Math.max(...scoress2)) {
-//         var ii = scoress.indexOf(Math.max(...scoress));
-//         document.getElementById('high-score2').innerHTML = ' Highest score:: ' + scoress[ii] + ' by ' + namess[ii];
-//         document.getElementById('high-score').innerHTML = ' Highest score:: ' + scoress[ii] + ' by ' + namess[ii];
-//     } else {
-//         ii = scoress2.indexOf(Math.max(...scoress2));
-//         document.getElementById('high-score2').innerHTML = ' Highest score:: ' + scoress2[ii] + ' by ' + namess2[ii];
-//         document.getElementById('high-score').innerHTML = ' Highest score:: ' + scoress2[ii] + ' by ' + namess2[ii];
-//     }
-// }
-
-// function erData(err) {
-//     console.log(err);
-// }
-
 
 function create2DArray(rows, cols, filler = 0) {
     return new Array(rows).fill().map(() => new Array(cols).fill(filler));
@@ -198,12 +109,6 @@ function setup() {
     resetButton = document.getElementById('reset-button');
     resetButton.addEventListener('click', reset);
     resultP = document.getElementById('winner');
-    // DifficultySlider = select("#difficulty");
-    // DifficultySlider.input(() => {
-    //     if (difficulty != DifficultySlider.value()) {
-    //         difficulty = DifficultySlider.value() - 1
-    //     }
-    // });
     difficulty = 5;
     board = create2DArray(n, n, "");
     w = width / n;

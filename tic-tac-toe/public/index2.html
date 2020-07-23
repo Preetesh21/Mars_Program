@@ -3,8 +3,6 @@
 
 <head>
     <meta charset="utf-8" />
-      <!-- HTML5 standard: Unicode 8 - It covers almost all the characters, punctuations,etc. -->
-    
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -23,11 +21,48 @@
 </head>
 
 <body>
+    <!-- Modal - A Dialog box will appear -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Directions</h5>
+                    <!creates a popup just after opening the page to explain everything>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h2>
+                        This is the Human vs Human Version where two people play against each other.
+                    </h2>
+                    <h3>Scoring Criteria</h3>
+                    <ul>
+                        <li>WINNER will get 10 points.</li>
+
+
+                        <li>In case of TIE or DEFEAT, NO POINTS will be awarded to the player.</li>
+                    </ul>
+                    <h4>Note-
+                        <ul id="Note">
+                            <li>The first player plays X</li>
+                            <li>Score board will be updated after pressing RESET </li>
+                            <li>Any player can start the game i.e. either 'X' or 'O'.</li>
+                            <li>You can't change the difficulty level in the game. If you do so, then it will Restart automatically.</li>
+                            <li>To see the updated Highest Scorers, you will have to refresh the page.</li>
+                        </ul>
+                    </h4>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
     <center>
         <div class="row">
             <div class="robo">
                 <img src="images/man2.png" style="height:30vw; width:15vw;margin-left:5px; margin-top:120px;">
-                <!-- it takes man2.png file from images folder and displays with given height, width and margin -->
                 <h2 id="score" style="text-align: center;color:rgb(0, 255, 179);font-size:medium;">Score: 0</h2>
                 <h2 id="high-score" style="text-align: center;color:rgb(0, 255, 179);font-size:medium;"></h2>
                 <p style="text-align: center; color:rgb(0, 255, 179)"></p>
@@ -38,9 +73,7 @@
                         <p class="glow">Tic - Tac - Toe</p>
                     </div>
                     <div id="canvas-container" class="center">
-                        <!-- <h2 id='score'>Your score is: 0</h2> -->
                         <label>X goes first</label>
-                         <!-- checkbox for the user to decide whether X goes first or not -->
                         <input type="checkbox" id='input_check'>
                     </div>
                     <div id="info-bar" class="center">
@@ -49,30 +82,20 @@
                         <button id="hint-button" style="position: relative;left:5vw;">HINT</button>
                         <br> USERNAME 1 <input type="text" id='input1'><br> USERNAME 2 <input type="text" id='input'><br>
                         <button type="submit" id='submit'>Submit</button>
+                        <button id='reset-button' style='position: relative;left:5vw;'>
+                            <a href='/'>  Home</a>
+                            </button>
                     </div>
                 </div>
             </div>
             <div class="man">
                 <img src="images/man.png" style="height:30vw; width:25vw;margin-top:120px;">
-                <!-- it takes man.png file from images folder and displays with given height, width and margin -->
                 <h2 id='score2' style="text-align: center;color:rgb(0, 255, 179);font-size:medium;">Score: 0</h2>
                 <h2 id="high-score2" style="text-align: center;color:rgb(0, 255, 179);font-size:medium;"></h2>
-                     <!-- It shows current score and highest score of the players -->
-
             </div>
         </div>
     </center>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-analytics.js"></script>
-   <!-- using google firebase for database -->
-   
-   <!-- using both javascript files such that it can follow the code and perform accordingly -->
-   <script src="sketch2.js"></script>
+    <script src="sketch2.js"></script>
     <script src="minimax.js"></script>
 
 </body>
