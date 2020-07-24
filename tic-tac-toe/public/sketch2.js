@@ -57,6 +57,7 @@ submit_button.addEventListener('click', () => {
     if (document.getElementById('input').value != '' && document.getElementById('input1').value != '') {
         fnc();
         document.getElementById('input').value = '';
+        document.getElementById('input1').value = '';
     } else {
         alert('Please write your name');
     }
